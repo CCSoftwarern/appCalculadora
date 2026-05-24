@@ -1,28 +1,64 @@
-import {TouchableHighlight, Text, StyleSheet} from 'react-native';
+import { TouchableHighlight, Text, StyleSheet } from 'react-native';
 
 interface TeclaProps {
   label: string;
   onPress: () => void;
 }
+
 export default function Tecla({ label, onPress }: TeclaProps) {
-    return (
-        <TouchableHighlight style={styles.tecla} onPress={onPress}>
-            <Text style={styles.text}>{label}</Text>
-        </TouchableHighlight>
-    );
+
+  const teclasOperacao = ['/', '*', '-', '+'];
+  const isOperacao = teclasOperacao.includes(label);
+  const isIgual = label === '=';
+
+  return (
+    <TouchableHighlight
+      style={[
+        styles.tecla,
+        isOperacao && styles.teclaOperacao,
+        isIgual && styles.teclaIgual
+      ]}
+      onPress={onPress}
+      underlayColor="#bdbdbd"
+    >
+      <Text
+        style={[
+          styles.text,
+          (isOperacao || isIgual) && styles.textOperacao
+        ]}
+      >
+        {label}
+      </Text>
+    </TouchableHighlight>
+  );
 }
 
 const styles = StyleSheet.create({
-    tecla: {
-        backgroundColor: '#d0d0d0',
-        padding: 20,
-        margin: 10,
-        borderRadius: 10,
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        fontSize: 18,
-    },
+  tecla: {
+    backgroundColor: '#d0d0d0',
+    margin: 5,
+    width: 80,
+    height: 80,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  teclaOperacao: {
+    backgroundColor: '#ffb366',
+  },
+
+  teclaIgual: {
+    backgroundColor: '#ff6600',
+  },
+
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+
+  textOperacao: {
+    color: '#fff',
+  },
 });

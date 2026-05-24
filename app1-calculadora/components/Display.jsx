@@ -16,11 +16,13 @@ const styles = StyleSheet.create({
   display: {
     backgroundColor: '#f0f0f0',
     padding: 20,
-    margin: 10,
-    borderRadius: 10,
+    width: '90%',
+    height: 100
   },
   text: {
-    fontSize: 24,
-    textAlign: 'center',
+    fontSize: 28,
+    textAlign: 'right',
+    fontStyle: 'italic',
+
   },
 });
