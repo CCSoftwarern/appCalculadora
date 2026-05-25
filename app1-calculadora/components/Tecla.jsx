@@ -5,14 +5,14 @@ interface TeclaProps {
   onPress: () => void;
 }
 
-
 export default function Tecla({ label, onPress }: TeclaProps) {
-// aqui defino telhas para uma estilo diferente
+// aqui defino teclas para um estilo diferente
   const teclasOperacao = ['/', '*', '-', '+'];
   const isOperacao = teclasOperacao.includes(label);
   const isIgual = label === '=';
 
   return (
+    
     <TouchableHighlight
       style={[
         styles.tecla,

@@ -36,7 +36,7 @@ export default function App() {
       <Display text={resultado} />
 
       <View style={styles.GrupoTeclas}>
-        <Tecla label="AC" onPress={limparExpressao} />
+      <Tecla label="AC" onPress={limparExpressao} />
       <Tecla label="(" onPress={() => addParaExpressao('(')} />
       <Tecla label=")" onPress={() => addParaExpressao(')')} />
       <Tecla label="/" onPress={() => addParaExpressao('/')} />
@@ -70,7 +70,6 @@ export default function App() {
         <Tecla label="<=" onPress={() => addParaExpressao('<=')} />
         <Tecla label="=" onPress={calcularResultado} />
       </View>
-
       <StatusBar style="auto" />
     </View>
   );
