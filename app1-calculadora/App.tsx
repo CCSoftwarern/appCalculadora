@@ -5,23 +5,22 @@ import Tecla from './components/Tecla';
 import { useState } from 'react';
 
 export default function App() {
+  // estados para expressao e resultdado.
   const [expressao, setExpressao] = useState('');
   const [resultado, setResultado] = useState('');
 
+  // função para adicionar a espressao
   const addParaExpressao = (exp: string) => {
     setExpressao((prev) => prev + exp);
   };
 
+  // limpar expressao
   const limparExpressao = () => {
     setExpressao('');
     setResultado('');
   };
 
-  const deletarUltimo = () => {
-    setExpressao((prev) => prev.slice(0, -1));
-    setResultado('');
-  };
-
+  // calcular resultado, em caso de erro vai exibir mensagem
   const calcularResultado = () => {
     try {
       const valor = eval(expressao);

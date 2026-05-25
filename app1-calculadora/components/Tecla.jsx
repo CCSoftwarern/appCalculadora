@@ -5,8 +5,9 @@ interface TeclaProps {
   onPress: () => void;
 }
 
-export default function Tecla({ label, onPress }: TeclaProps) {
 
+export default function Tecla({ label, onPress }: TeclaProps) {
+// aqui defino telhas para uma estilo diferente
   const teclasOperacao = ['/', '*', '-', '+'];
   const isOperacao = teclasOperacao.includes(label);
   const isIgual = label === '=';
