@@ -1,10 +1,6 @@
 import { Text, StyleSheet, View } from "react-native";
 
-interface DisplayProps {
-  text: string;
-}
-
-export default function Display({ text }: DisplayProps) {
+export default function Display({ text }) {
   return (
     <View style={styles.display}>
       <Text style={styles.text}>{text}</Text>
