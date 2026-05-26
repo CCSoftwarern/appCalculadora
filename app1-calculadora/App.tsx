@@ -9,18 +9,16 @@ export default function App() {
   const [expressao, setExpressao] = useState('');
   const [resultado, setResultado] = useState('');
 
-  // função para adicionar a espressao
   const addParaExpressao = (exp: string) => {
     setExpressao((prev) => prev + exp);
   };
 
-  // limpar expressao
+
   const limparExpressao = () => {
     setExpressao('');
     setResultado('');
   };
 
-  // calcular resultado, em caso de erro vai exibir mensagem
   const calcularResultado = () => {
     try {
       const valor = eval(expressao);
